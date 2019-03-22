@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.king.ar_map">
     <!--允许程序打开网络套接字-->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -27,7 +28,8 @@
     //允许sd卡写权限，需写入地图数据，禁用后无法显示地图
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     //这个权限用于进行网络定位
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
     //这个权限用于访问GPS定位
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     //获取统计数据
@@ -45,19 +47,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service android:name="com.baidu.location.f"
-            android:enabled="true"
-            android:process=":remote"/>
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="db52a6d6fdd4885a027e57fd88c67f64"/>
-        <meta-data
-            android:name="com.baidu.lbsapi.API_KEY"
-            android:value="RodwHIPM6qdsL2fxBdcYZimuFQx7OXjb" />
+        <!--<meta-data-->
+            <!--android:name="com.baidu.lbsapi.API_KEY"-->
+            <!--android:value="RodwHIPM6qdsL2fxBdcYZimuFQx7OXjb" />-->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
